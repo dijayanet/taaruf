@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
+    /* ===== STYLE SAMA ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Inter", sans-serif;
@@ -506,7 +507,7 @@
       </div>
     </div>
 
-    <!-- PREVIEW BIODATA RAMDAN (diperbarui sesuai file) -->
+    <!-- PREVIEW BIODATA RAMDAN -->
     <div class="biodata-preview">
       <h3><i class="fas fa-user-circle"></i> Contoh Biodata · Ramdan Ahmad Dijaya</h3>
       <div class="row"><span class="label"><i class="fas fa-user"></i> Nama</span><span class="value">Ramdan Ahmad Dijaya, S.Pd.</span></div>
@@ -527,9 +528,8 @@
     </div>
   </div>
 
-  <!-- FORM (multi-step) -->
+  <!-- FORM -->
   <div id="formContainer" class="hidden">
-    <!-- progress -->
     <div class="progress-wrap">
       <div class="step-indicators" id="stepDots">
         <span class="step-dot active"></span>
@@ -549,7 +549,6 @@
           <label><input type="radio" name="peran" value="admin"> Admin (mengisi untuk orang lain)</label>
         </div>
       </div>
-
       <div class="form-group"><label><i class="fas fa-user"></i> Nama Lengkap</label><input class="form-control" id="namaLengkap" placeholder="Nama sesuai KTP" value="Ramdan Ahmad Dijaya" /></div>
       <div class="form-group"><label><i class="fas fa-venus-mars"></i> Jenis Kelamin</label>
         <select class="form-control" id="jenisKelamin"><option value="Laki-laki" selected>Laki-laki</option><option value="Perempuan">Perempuan</option></select>
@@ -645,7 +644,7 @@
 
     let currentStep = 1;
     const totalSteps = 4;
-    let fotoBase64 = ''; // untuk menyimpan foto
+    let fotoBase64 = '';
 
     // Preview foto
     fotoInput.addEventListener('change', function(e) {
@@ -695,23 +694,35 @@
       stats.textContent = all.length === 0 ? 'Belum ada data tersimpan.' : `Total ${all.length} data tersimpan.`;
     }
 
-    // ========== EXPORT CSV ==========
+    // ========== EXPORT CSV (dengan foto_base64) ==========
     function downloadCSV(dataArray, filename = 'biodata_taaruf.csv') {
       if (!dataArray || dataArray.length === 0) { alert('Tidak ada data.'); return; }
-      // Buat daftar header tanpa kolom foto (base64)
-      const sample = dataArray[0];
-      const headers = Object.keys(sample).filter(k => k !== 'foto' && k !== 'foto_base64');
-      let csv = headers.join(',') + '\n';
+      
+      // Ambil semua key termasuk foto_base64
+      const headers = Object.keys(dataArray[0]);
+      
+      // Tambahkan BOM untuk UTF-8 agar Excel membaca dengan benar
+      let csv = '\uFEFF'; // BOM
+      
+      // Opsional: tambahkan baris sep=, agar Excel otomatis memisahkan kolom
+      // csv += 'sep=,\n';
+      
+      csv += headers.join(',') + '\n';
+      
       dataArray.forEach(row => {
         const values = headers.map(key => {
-          let val = row[key] || '';
-          if (typeof val === 'string' && (val.includes(',') || val.includes('"') || val.includes('\n'))) {
-            val = `"${val.replace(/"/g, '""')}"`;
+          let val = row[key] !== undefined && row[key] !== null ? row[key] : '';
+          if (typeof val === 'string') {
+            // Escape kutip dan koma
+            if (val.includes(',') || val.includes('"') || val.includes('\n') || val.includes('\r')) {
+              val = `"${val.replace(/"/g, '""')}"`;
+            }
           }
           return val;
         });
         csv += values.join(',') + '\n';
       });
+
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
@@ -805,7 +816,6 @@
       const isAdmin = document.querySelector('input[name="peran"]:checked').value === 'admin';
       const waPribadi = getVal('waPribadi');
 
-      // Ambil data dari form
       const payload = {
         nama_lengkap: getVal('namaLengkap'),
         jenis_kelamin: getSel('jenisKelamin'),
@@ -826,7 +836,7 @@
         hobi: getVal('hobi'),
         kriteria: getVal('kriteria'),
         peran: isAdmin ? 'admin' : 'calon',
-        foto_base64: fotoBase64 || '' // simpan base64
+        foto_base64: fotoBase64 || ''
       };
 
       // Simpan ke localStorage
@@ -838,42 +848,45 @@
       if (nomorTujuan.startsWith('0')) nomorTujuan = '62' + nomorTujuan.substring(1);
       else if (!nomorTujuan.startsWith('62')) nomorTujuan = '62' + nomorTujuan;
 
-      // Pesan WA
+      // ========== PESAN WA DENGAN BULLET POINT ==========
       const pesan = 
-`*Biodata Ta'aruf Al-Mizan*
-Nama: ${payload.nama_lengkap}
-Jenis Kelamin: ${payload.jenis_kelamin}
-Usia: ${payload.usia} tahun
-Domisili: ${payload.domisili}
-WA Pribadi: ${payload.wa_pribadi}
-Email: ${payload.email}
-Agama: ${payload.agama}
-Pendidikan: ${payload.pendidikan}
-Pekerjaan: ${payload.pekerjaan}
-Status Nikah: ${payload.status_nikah}
-Facebook: ${payload.facebook || '-'}
-Instagram: ${payload.instagram || '-'}
+`*🌿 BIODATA TA'ARUF AL-MIZAN*
 
-Tentang Saya:
+• *Nama*           : ${payload.nama_lengkap}
+• *Jenis Kelamin*  : ${payload.jenis_kelamin}
+• *Usia*           : ${payload.usia} tahun
+• *Domisili*       : ${payload.domisili}
+• *WA Pribadi*     : ${payload.wa_pribadi}
+• *Email*          : ${payload.email}
+• *Agama*          : ${payload.agama}
+• *Pendidikan*     : ${payload.pendidikan}
+• *Pekerjaan*      : ${payload.pekerjaan}
+• *Status Nikah*   : ${payload.status_nikah}
+• *Facebook*       : ${payload.facebook || '-'}
+• *Instagram*      : ${payload.instagram || '-'}
+
+📝 *Tentang Saya:*
 ${payload.tentang_saya}
 
-Ibadah:
+🕌 *Ibadah Harian:*
 ${payload.ibadah}
 
-Visi Nikah:
+🏡 *Visi Pernikahan:*
 ${payload.visi_nikah}
 
-Sifat & Kepribadian:
+💎 *Sifat & Kepribadian:*
 ${payload.sifat}
 
-Hobi:
+🎯 *Hobi:*
 ${payload.hobi}
 
-Kriteria Pasangan:
+❤️ *Kriteria Pasangan:*
 ${payload.kriteria}
 
---- 
-Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
+---
+⚠️ *Foto tidak dapat dikirim otomatis via WA.*
+Silakan kirim foto secara terpisah ke chat ini.
+📅 Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
 
       // Kirim ke Google Sheets (opsional)
       submitBtn.disabled = true;
