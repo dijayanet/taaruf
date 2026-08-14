@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* ===== STYLE ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Inter", sans-serif;
@@ -113,9 +112,7 @@
       transform: scale(1.01);
       box-shadow: 0 12px 24px -8px #065f4660;
     }
-    .btn-primary i {
-      font-size: 18px;
-    }
+    .btn-primary i { font-size: 18px; }
     .btn-primary:disabled {
       opacity: 0.6;
       cursor: not-allowed;
@@ -136,9 +133,7 @@
       cursor: pointer;
       border: 1px solid #d0ccc0;
     }
-    .btn-secondary:hover {
-      background: #e3dfd2;
-    }
+    .btn-secondary:hover { background: #e3dfd2; }
 
     .progress-wrap {
       margin: 26px 0 18px;
@@ -176,9 +171,7 @@
       display: none;
       animation: fade 0.25s ease;
     }
-    .form-step.active {
-      display: block;
-    }
+    .form-step.active { display: block; }
     @keyframes fade {
       0% { opacity: 0.4; transform: translateY(4px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -215,9 +208,7 @@
       box-shadow: 0 0 0 4px #065f4618;
       background: white;
     }
-    select.form-control {
-      appearance: auto;
-    }
+    select.form-control { appearance: auto; }
     textarea.form-control {
       resize: vertical;
       min-height: 72px;
@@ -291,9 +282,7 @@
       transition: 0.15s;
       box-shadow: 0 4px 10px -4px #065f4650;
     }
-    .btn-next:hover:not(:disabled) {
-      background: #064e3b;
-    }
+    .btn-next:hover:not(:disabled) { background: #064e3b; }
     .btn-next:disabled {
       opacity: 0.5;
       pointer-events: none;
@@ -368,9 +357,7 @@
       padding: 4px 0;
       border-bottom: 1px dashed #ddd6c4;
     }
-    .biodata-preview .row:last-child {
-      border-bottom: none;
-    }
+    .biodata-preview .row:last-child { border-bottom: none; }
     .biodata-preview .label {
       font-weight: 600;
       color: #1e3a2f;
@@ -438,9 +425,7 @@
       margin-top: 8px;
       text-decoration: none;
     }
-    .btn-csv:hover {
-      background: #1a2a3a;
-    }
+    .btn-csv:hover { background: #1a2a3a; }
 
     .data-manager {
       margin-top: 20px;
@@ -463,6 +448,15 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 12px;
+    }
+
+    .photo-preview {
+      max-width: 120px;
+      max-height: 120px;
+      border-radius: 16px;
+      margin-top: 8px;
+      border: 2px solid #e4e0d6;
+      object-fit: cover;
     }
 
     @media (max-width: 480px) {
@@ -512,16 +506,19 @@
       </div>
     </div>
 
-    <!-- PREVIEW BIODATA RAMDAN -->
+    <!-- PREVIEW BIODATA RAMDAN (diperbarui sesuai file) -->
     <div class="biodata-preview">
       <h3><i class="fas fa-user-circle"></i> Contoh Biodata · Ramdan Ahmad Dijaya</h3>
       <div class="row"><span class="label"><i class="fas fa-user"></i> Nama</span><span class="value">Ramdan Ahmad Dijaya, S.Pd.</span></div>
-      <div class="row"><span class="label"><i class="fas fa-venus-mars"></i> Jenis Kelamin</span><span class="value">Ikhwan (Laki-laki)</span></div>
+      <div class="row"><span class="label"><i class="fas fa-venus-mars"></i> Jenis Kelamin</span><span class="value">Laki-laki</span></div>
       <div class="row"><span class="label"><i class="fas fa-calendar-alt"></i> Usia</span><span class="value">24 Tahun</span></div>
       <div class="row"><span class="label"><i class="fas fa-graduation-cap"></i> Pendidikan</span><span class="value">S1 Pendidikan Teknologi Informasi (Cum Laude)</span></div>
-      <div class="row"><span class="label"><i class="fas fa-briefcase"></i> Pekerjaan</span><span class="value">Guru Informatika · Web Developer · Freelancer</span></div>
+      <div class="row"><span class="label"><i class="fas fa-briefcase"></i> Pekerjaan</span><span class="value">Guru Informatika (Honorer) · Freelancer</span></div>
       <div class="row"><span class="label"><i class="fas fa-map-pin"></i> Domisili</span><span class="value">Kabupaten Kuningan, Jawa Barat</span></div>
       <div class="row"><span class="label"><i class="fas fa-heart"></i> Status</span><span class="value">Belum Menikah</span></div>
+      <div class="row"><span class="label"><i class="fas fa-pray"></i> Agama</span><span class="value">Islam</span></div>
+      <div class="row"><span class="label"><i class="fas fa-smile"></i> Sifat</span><span class="value">Penyabar, Setia, Bertanggung jawab, Pekerja keras, Mudah beradaptasi</span></div>
+      <div class="row"><span class="label"><i class="fas fa-heart"></i> Hobi</span><span class="value">Belajar teknologi & programming, Membaca, Traveling kuliner, Fotografi</span></div>
       <div class="row"><span class="label"><i class="fas fa-flag"></i> Visi Nikah</span><span class="value">Membangun keluarga sakinah, mawaddah, warahmah</span></div>
       <div style="margin-top:12px; font-size:13px; color:#3d5a4b; background:#f2f5ea; padding:8px 14px; border-radius:30px;">
         <i class="fas fa-check-circle" style="color:#065F46;"></i> 
@@ -554,18 +551,18 @@
       </div>
 
       <div class="form-group"><label><i class="fas fa-user"></i> Nama Lengkap</label><input class="form-control" id="namaLengkap" placeholder="Nama sesuai KTP" value="Ramdan Ahmad Dijaya" /></div>
-      <div class="form-group"><label><i class="fas fa-calendar-alt"></i> Usia</label><input class="form-control" id="usia" type="number" placeholder="24" value="24" /></div>
       <div class="form-group"><label><i class="fas fa-venus-mars"></i> Jenis Kelamin</label>
-        <select class="form-control" id="jenisKelamin"><option value="Ikhwan" selected>Ikhwan (Laki-laki)</option><option value="Akhwat">Akhwat (Perempuan)</option></select>
+        <select class="form-control" id="jenisKelamin"><option value="Laki-laki" selected>Laki-laki</option><option value="Perempuan">Perempuan</option></select>
       </div>
+      <div class="form-group"><label><i class="fas fa-calendar-alt"></i> Usia</label><input class="form-control" id="usia" type="number" placeholder="24" value="24" /></div>
       <div class="form-group"><label><i class="fas fa-map-pin"></i> Domisili</label><input class="form-control" id="domisili" placeholder="Kota/Kabupaten" value="Kabupaten Kuningan, Jawa Barat" /></div>
-      <div class="form-group"><label><i class="fab fa-whatsapp"></i> WA Wali (wajib)</label><input class="form-control" id="waWali" placeholder="08xxxxxxxx" value="08123456789" /></div>
+      <div class="form-group"><label><i class="fab fa-whatsapp"></i> Nomor WhatsApp Pribadi <span style="color:#b91c1c;">*</span></label>
+        <input class="form-control" id="waPribadi" placeholder="08xxxxxxxx" value="08123456789" />
+        <div class="form-note">Diisi dengan nomor WhatsApp calon (yang bersangkutan).</div>
+      </div>
       <div class="form-group"><label><i class="fas fa-envelope"></i> Email</label><input class="form-control" id="email" type="email" placeholder="email@domain.com" value="ramdan@example.com" /></div>
-
-      <div class="form-group" id="waCalonGroup" style="display:none;">
-        <label><i class="fab fa-whatsapp"></i> Nomor WhatsApp Calon <span style="color:#b91c1c;">*</span></label>
-        <input class="form-control" id="waCalon" placeholder="08xxxxxxxx" />
-        <div class="form-note">Diisi jika Anda admin yang mengisi untuk orang lain.</div>
+      <div class="form-group"><label><i class="fas fa-pray"></i> Agama</label>
+        <select class="form-control" id="agama"><option value="Islam" selected>Islam</option><option value="Kristen">Kristen</option><option value="Katolik">Katolik</option><option value="Hindu">Hindu</option><option value="Buddha">Buddha</option><option value="Lainnya">Lainnya</option></select>
       </div>
     </div>
 
@@ -574,10 +571,12 @@
       <div class="form-group"><label><i class="fas fa-graduation-cap"></i> Pendidikan Terakhir</label>
         <select class="form-control" id="pendidikan"><option value="SMA/SMK">SMA/SMK</option><option value="D3">D3</option><option value="S1" selected>S1</option><option value="S2">S2</option><option value="Lainnya">Lainnya</option></select>
       </div>
-      <div class="form-group"><label><i class="fas fa-briefcase"></i> Pekerjaan</label><input class="form-control" id="pekerjaan" placeholder="Guru, Developer, dll" value="Guru Informatika · Web Developer · Freelancer" /></div>
+      <div class="form-group"><label><i class="fas fa-briefcase"></i> Pekerjaan</label><input class="form-control" id="pekerjaan" placeholder="Guru, Developer, dll" value="Guru Informatika (Honorer) / Freelancer" /></div>
       <div class="form-group"><label><i class="fas fa-heart"></i> Status Pernikahan</label>
         <select class="form-control" id="statusNikah"><option value="Belum Menikah" selected>Belum Menikah</option><option value="Pernah Menikah">Pernah Menikah</option><option value="Cerai">Cerai</option></select>
       </div>
+      <div class="form-group"><label><i class="fab fa-facebook"></i> Facebook</label><input class="form-control" id="facebook" placeholder="Username atau link" value="ramdan.dijaya" /></div>
+      <div class="form-group"><label><i class="fab fa-instagram"></i> Instagram</label><input class="form-control" id="instagram" placeholder="Username atau link" value="@ramdan_dijaya" /></div>
     </div>
 
     <!-- step 3 -->
@@ -585,11 +584,18 @@
       <div class="form-group"><label><i class="fas fa-user-edit"></i> Tentang Saya</label><textarea class="form-control" id="tentangSaya" rows="2">Saya pribadi sederhana, pekerja keras, bertanggung jawab. Terbiasa kuliah sambil bekerja. Berkomitmen membangun keluarga sakinah, mawaddah, warahmah.</textarea></div>
       <div class="form-group"><label><i class="fas fa-pray"></i> Ibadah Harian</label><textarea class="form-control" id="ibadah" rows="2">Menjaga salat 5 waktu, membaca Al-Qur'an, riyadhah tajwid, dan mengamalkan dzikir serta thariqah Syadziliyah.</textarea></div>
       <div class="form-group"><label><i class="fas fa-flag"></i> Visi Misi Pernikahan</label><textarea class="form-control" id="visiNikah" rows="2">Membangun keluarga yang sakinah, mawaddah, warahmah, saling menghormati, menguatkan, dan menyelesaikan masalah dengan komunikasi baik.</textarea></div>
+      <div class="form-group"><label><i class="fas fa-smile"></i> Sifat & Kepribadian</label><textarea class="form-control" id="sifat" rows="2">Penyabar, setia, bertanggung jawab, pekerja keras, mudah beradaptasi, suka belajar hal baru, komunikatif dan jujur.</textarea></div>
+      <div class="form-group"><label><i class="fas fa-heart"></i> Hobi</label><textarea class="form-control" id="hobi" rows="2">Belajar teknologi & pemrograman, membaca, traveling kuliner, fotografi sederhana, diskusi dan membantu orang lain di bidang teknologi.</textarea></div>
     </div>
 
     <!-- step 4 -->
     <div class="form-step" data-step="4">
-      <div class="form-group"><label><i class="fas fa-users"></i> Kriteria Pasangan Idaman</label><textarea class="form-control" id="kriteria" rows="2">Muslimah yang menjaga salat 5 waktu, berakhlak baik, jujur, setia, siap membangun rumah tangga, mau saling belajar dan mendukung, mengutamakan keluarga, tidak mudah terpengaruh lingkungan.</textarea></div>
+      <div class="form-group"><label><i class="fas fa-users"></i> Kriteria Pasangan Idaman</label><textarea class="form-control" id="kriteria" rows="2">Muslimah yang menjaga salat 5 waktu, berakhlak baik, jujur, setia, siap membangun rumah tangga, mau saling belajar dan mendukung, mengutamakan keluarga, tidak mudah terpengaruh lingkungan atau media sosial.</textarea></div>
+      <div class="form-group"><label><i class="fas fa-camera"></i> Foto (opsional)</label>
+        <input type="file" class="form-control" id="foto" accept="image/*" />
+        <div class="form-note">Unggah foto terbaru yang sopan (maks. 2MB).</div>
+        <img id="fotoPreview" class="photo-preview hidden" alt="Preview foto" />
+      </div>
       <div class="checkbox-group">
         <input type="checkbox" id="komitmenJujur" checked />
         <label for="komitmenJujur"><strong>Saya berkomitmen jujur</strong> dan bertanggung jawab atas seluruh data yang saya isi.</label>
@@ -615,9 +621,7 @@
   (function() {
     // ========== GLOBAL ==========
     const STORAGE_KEY = 'taaruf_data';
-
-    // ===== NOMOR ADMIN (sudah diubah) =====
-    const ADMIN_PHONE = '6283836885236'; // 083836885236 → 6283836885236
+    const ADMIN_PHONE = '6283836885236'; // 083836885236
 
     const landing = document.getElementById('landingPage');
     const formContainer = document.getElementById('formContainer');
@@ -633,26 +637,45 @@
     const submitBtn = document.getElementById('submitBtn');
 
     const peranRadios = document.querySelectorAll('input[name="peran"]');
-    const waCalonGroup = document.getElementById('waCalonGroup');
-    const waCalonInput = document.getElementById('waCalon');
+    const fotoInput = document.getElementById('foto');
+    const fotoPreview = document.getElementById('fotoPreview');
 
     const getVal = id => document.getElementById(id).value.trim();
     const getSel = id => document.getElementById(id).value;
 
     let currentStep = 1;
     const totalSteps = 4;
+    let fotoBase64 = ''; // untuk menyimpan foto
 
-    // ========== LOCAL STORAGE FUNCTIONS ==========
+    // Preview foto
+    fotoInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        if (file.size > 2 * 1024 * 1024) {
+          alert('Ukuran foto maksimal 2MB.');
+          this.value = '';
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          fotoBase64 = ev.target.result;
+          fotoPreview.src = ev.target.result;
+          fotoPreview.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+      } else {
+        fotoBase64 = '';
+        fotoPreview.classList.add('hidden');
+      }
+    });
+
+    // ========== LOCAL STORAGE ==========
     function getStoredData() {
-      try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-      } catch { return []; }
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch { return []; }
     }
-
     function saveStoredData(data) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     }
-
     function addData(payload) {
       const all = getStoredData();
       payload.timestamp = new Date().toISOString();
@@ -660,31 +683,24 @@
       saveStoredData(all);
       updateDataStats();
     }
-
     function clearAllData() {
       if (confirm('Hapus semua data tersimpan?')) {
         localStorage.removeItem(STORAGE_KEY);
         updateDataStats();
       }
     }
-
     function updateDataStats() {
       const all = getStoredData();
       const stats = document.getElementById('dataStats');
-      if (all.length === 0) {
-        stats.textContent = 'Belum ada data tersimpan.';
-      } else {
-        stats.textContent = `Total ${all.length} data tersimpan.`;
-      }
+      stats.textContent = all.length === 0 ? 'Belum ada data tersimpan.' : `Total ${all.length} data tersimpan.`;
     }
 
     // ========== EXPORT CSV ==========
     function downloadCSV(dataArray, filename = 'biodata_taaruf.csv') {
-      if (!dataArray || dataArray.length === 0) {
-        alert('Tidak ada data untuk diekspor.');
-        return;
-      }
-      const headers = Object.keys(dataArray[0]);
+      if (!dataArray || dataArray.length === 0) { alert('Tidak ada data.'); return; }
+      // Buat daftar header tanpa kolom foto (base64)
+      const sample = dataArray[0];
+      const headers = Object.keys(sample).filter(k => k !== 'foto' && k !== 'foto_base64');
       let csv = headers.join(',') + '\n';
       dataArray.forEach(row => {
         const values = headers.map(key => {
@@ -696,7 +712,6 @@
         });
         csv += values.join(',') + '\n';
       });
-
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
@@ -707,23 +722,12 @@
 
     function exportAll() {
       const all = getStoredData();
-      if (all.length === 0) {
-        alert('Belum ada data tersimpan.');
-        return;
-      }
+      if (all.length === 0) { alert('Belum ada data.'); return; }
       downloadCSV(all, 'semua_biodata_taaruf.csv');
     }
-
     function exportSingle(payload) {
       downloadCSV([payload], 'biodata_single.csv');
     }
-
-    // ========== UI TOGGLE WA CALON ==========
-    function toggleWaCalon() {
-      const isAdmin = document.querySelector('input[name="peran"]:checked').value === 'admin';
-      waCalonGroup.style.display = isAdmin ? 'block' : 'none';
-    }
-    peranRadios.forEach(r => r.addEventListener('change', toggleWaCalon));
 
     // ========== STEP NAVIGATION ==========
     function updateUI() {
@@ -741,7 +745,7 @@
         const nama = getVal('namaLengkap');
         const usia = getVal('usia');
         const dom = getVal('domisili');
-        const wa = getVal('waWali');
+        const wa = getVal('waPribadi');
         const email = getVal('email');
         if (!nama || !usia || !dom || !wa || !email) {
           alert('⚠️ Semua field di step 1 wajib diisi.');
@@ -752,27 +756,17 @@
           return false;
         }
         if (!wa.match(/^[0-9]{8,15}$/)) {
-          alert('⚠️ Nomor WA Wali harus 8-15 digit angka.');
+          alert('⚠️ Nomor WhatsApp harus 8-15 digit angka.');
           return false;
         }
         if (!email.includes('@') || !email.includes('.')) {
           alert('⚠️ Email tidak valid.');
           return false;
         }
-
-        const isAdmin = document.querySelector('input[name="peran"]:checked').value === 'admin';
-        if (isAdmin) {
-          const waCalon = getVal('waCalon');
-          if (!waCalon || !waCalon.match(/^[0-9]{8,15}$/)) {
-            alert('⚠️ Nomor WhatsApp Calon wajib diisi dengan benar (8-15 digit angka).');
-            return false;
-          }
-        }
         return true;
       }
       if (step === 2) {
-        const kerja = getVal('pekerjaan');
-        if (!kerja) {
+        if (!getVal('pekerjaan')) {
           alert('⚠️ Pekerjaan wajib diisi.');
           return false;
         }
@@ -794,14 +788,12 @@
       currentStep = step;
       updateUI();
     }
-
     function nextStep() {
       if (currentStep < totalSteps) {
         if (!validateStep(currentStep)) return;
         goToStep(currentStep + 1);
       }
     }
-
     function prevStep() {
       if (currentStep > 1) goToStep(currentStep - 1);
     }
@@ -811,49 +803,56 @@
       if (!validateStep(4)) return;
 
       const isAdmin = document.querySelector('input[name="peran"]:checked').value === 'admin';
-      const waCalon = isAdmin ? getVal('waCalon') : null;
+      const waPribadi = getVal('waPribadi');
 
+      // Ambil data dari form
       const payload = {
         nama_lengkap: getVal('namaLengkap'),
-        usia: parseInt(getVal('usia')) || 0,
         jenis_kelamin: getSel('jenisKelamin'),
+        usia: parseInt(getVal('usia')) || 0,
         domisili: getVal('domisili'),
-        wa_wali: getVal('waWali'),
+        wa_pribadi: waPribadi,
         email: getVal('email'),
+        agama: getSel('agama'),
         pendidikan: getSel('pendidikan'),
         pekerjaan: getVal('pekerjaan'),
         status_nikah: getSel('statusNikah'),
+        facebook: getVal('facebook'),
+        instagram: getVal('instagram'),
         tentang_saya: getVal('tentangSaya'),
         ibadah: getVal('ibadah'),
         visi_nikah: getVal('visiNikah'),
+        sifat: getVal('sifat'),
+        hobi: getVal('hobi'),
         kriteria: getVal('kriteria'),
         peran: isAdmin ? 'admin' : 'calon',
-        wa_calon: waCalon || ''
+        foto_base64: fotoBase64 || '' // simpan base64
       };
 
       // Simpan ke localStorage
       addData(payload);
 
       // Tentukan nomor tujuan WA
-      let nomorTujuan = isAdmin ? waCalon : ADMIN_PHONE;
+      let nomorTujuan = isAdmin ? waPribadi : ADMIN_PHONE;
       nomorTujuan = nomorTujuan.replace(/\s+/g, '').replace(/[-()]/g, '');
-      if (nomorTujuan.startsWith('0')) {
-        nomorTujuan = '62' + nomorTujuan.substring(1);
-      } else if (!nomorTujuan.startsWith('62')) {
-        nomorTujuan = '62' + nomorTujuan;
-      }
+      if (nomorTujuan.startsWith('0')) nomorTujuan = '62' + nomorTujuan.substring(1);
+      else if (!nomorTujuan.startsWith('62')) nomorTujuan = '62' + nomorTujuan;
 
+      // Pesan WA
       const pesan = 
 `*Biodata Ta'aruf Al-Mizan*
 Nama: ${payload.nama_lengkap}
-Usia: ${payload.usia} tahun
 Jenis Kelamin: ${payload.jenis_kelamin}
+Usia: ${payload.usia} tahun
 Domisili: ${payload.domisili}
+WA Pribadi: ${payload.wa_pribadi}
+Email: ${payload.email}
+Agama: ${payload.agama}
 Pendidikan: ${payload.pendidikan}
 Pekerjaan: ${payload.pekerjaan}
 Status Nikah: ${payload.status_nikah}
-WA Wali: ${payload.wa_wali}
-Email: ${payload.email}
+Facebook: ${payload.facebook || '-'}
+Instagram: ${payload.instagram || '-'}
 
 Tentang Saya:
 ${payload.tentang_saya}
@@ -864,13 +863,19 @@ ${payload.ibadah}
 Visi Nikah:
 ${payload.visi_nikah}
 
+Sifat & Kepribadian:
+${payload.sifat}
+
+Hobi:
+${payload.hobi}
+
 Kriteria Pasangan:
 ${payload.kriteria}
 
 --- 
 Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
 
-      // Kirim ke Google Sheets (opsional, tidak mempengaruhi)
+      // Kirim ke Google Sheets (opsional)
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<span class="loader"></span> Menyimpan...';
 
@@ -882,7 +887,7 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
         body: JSON.stringify(payload)
       }).catch(() => {})
 
-      // Tampilkan status sukses
+      // Tampilkan status
       formContainer.classList.add('hidden');
       statusScreen.classList.remove('hidden');
       statusContent.innerHTML = `
@@ -890,6 +895,7 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
         <h2>Barakallahu Fiik</h2>
         <p style="font-size:18px; font-weight:500;">Biodata Berhasil Tersimpan!</p>
         <p style="color:#3d5a4b;">Data sudah disimpan di perangkat ini. Gunakan tombol di bawah untuk mengirim via WhatsApp atau unduh CSV.</p>
+        ${payload.foto_base64 ? `<img src="${payload.foto_base64}" style="max-width:150px; border-radius:16px; margin:8px 0; border:2px solid #e4e0d6;" />` : ''}
         <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
           <a href="https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}" target="_blank" class="btn-wa">
             <i class="fab fa-whatsapp"></i> Kirim ke WhatsApp
@@ -915,7 +921,6 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
       landing.classList.add('hidden');
       formContainer.classList.remove('hidden');
       statusScreen.classList.add('hidden');
-      toggleWaCalon();
       goToStep(1);
     });
 
@@ -923,12 +928,10 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
       e.preventDefault();
       nextStep();
     });
-
     prevBtn.addEventListener('click', function(e) {
       e.preventDefault();
       prevStep();
     });
-
     submitBtn.addEventListener('click', function(e) {
       e.preventDefault();
       handleSubmit();
@@ -942,11 +945,8 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
         const isFormVisible = !formContainer.classList.contains('hidden');
         const isStatusVisible = !statusScreen.classList.contains('hidden');
         if (isFormVisible && !isStatusVisible) {
-          if (currentStep === totalSteps) {
-            submitBtn.click();
-          } else {
-            nextBtn.click();
-          }
+          if (currentStep === totalSteps) submitBtn.click();
+          else nextBtn.click();
         }
       }
     });
@@ -954,8 +954,6 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
     // ========== INISIALISASI ==========
     updateDataStats();
     updateUI();
-    toggleWaCalon();
-
   })();
 </script>
 </body>
