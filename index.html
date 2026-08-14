@@ -616,8 +616,8 @@
     // ========== GLOBAL ==========
     const STORAGE_KEY = 'taaruf_data';
 
-    // ADMIN PHONE (ganti dengan nomor Anda)
-    const ADMIN_PHONE = '628123456789'; // contoh
+    // ===== NOMOR ADMIN (sudah diubah) =====
+    const ADMIN_PHONE = '6283836885236'; // 083836885236 → 6283836885236
 
     const landing = document.getElementById('landingPage');
     const formContainer = document.getElementById('formContainer');
@@ -655,7 +655,6 @@
 
     function addData(payload) {
       const all = getStoredData();
-      // Tambahkan timestamp
       payload.timestamp = new Date().toISOString();
       all.push(payload);
       saveStoredData(all);
@@ -685,14 +684,11 @@
         alert('Tidak ada data untuk diekspor.');
         return;
       }
-      // Ambil semua key dari objek pertama sebagai header
       const headers = Object.keys(dataArray[0]);
-      // Buat baris CSV
       let csv = headers.join(',') + '\n';
       dataArray.forEach(row => {
         const values = headers.map(key => {
           let val = row[key] || '';
-          // Jika ada koma atau kutip, bungkus dengan kutip
           if (typeof val === 'string' && (val.includes(',') || val.includes('"') || val.includes('\n'))) {
             val = `"${val.replace(/"/g, '""')}"`;
           }
@@ -835,10 +831,10 @@
         wa_calon: waCalon || ''
       };
 
-      // ===== SIMPAN KE LOCAL STORAGE =====
+      // Simpan ke localStorage
       addData(payload);
 
-      // ===== BUAT PESAN WA =====
+      // Tentukan nomor tujuan WA
       let nomorTujuan = isAdmin ? waCalon : ADMIN_PHONE;
       nomorTujuan = nomorTujuan.replace(/\s+/g, '').replace(/[-()]/g, '');
       if (nomorTujuan.startsWith('0')) {
@@ -874,20 +870,19 @@ ${payload.kriteria}
 --- 
 Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
 
-      // ===== KIRIM KE APPS SCRIPT (opsional, tidak wajib) =====
+      // Kirim ke Google Sheets (opsional, tidak mempengaruhi)
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<span class="loader"></span> Menyimpan...';
 
-      // Kirim ke Google Sheets (jika ingin, tapi kita sudah simpan lokal)
       const url = 'https://script.google.com/macros/s/AKfycbzO-QiCIDrZJ8TetslkCsMHtM-8UkqsBZcQbCHN8SNbfgscc0NJZfeoFSO-OWZnwKHI/exec';
       fetch(url, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
-      }).catch(() => {}) // abaikan error, tetap lanjut
+      }).catch(() => {})
 
-      // ===== TAMPILKAN STATUS =====
+      // Tampilkan status sukses
       formContainer.classList.add('hidden');
       statusScreen.classList.remove('hidden');
       statusContent.innerHTML = `
@@ -906,7 +901,6 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
         </div>
       `;
 
-      // Event untuk download single
       document.getElementById('downloadSingleBtn').addEventListener('click', function() {
         exportSingle(payload);
       });
@@ -940,13 +934,9 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
       handleSubmit();
     });
 
-    // Export all
     document.getElementById('exportAllBtn').addEventListener('click', exportAll);
-
-    // Clear data
     document.getElementById('clearDataBtn').addEventListener('click', clearAllData);
 
-    // Keyboard Enter
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         const isFormVisible = !formContainer.classList.contains('hidden');
@@ -969,4 +959,4 @@ Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
   })();
 </script>
 </body>
-      </html>
+  </html>
