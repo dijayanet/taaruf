@@ -9,12 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* ===== STYLE SAMA SEPERTI SEBELUMNYA ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* ===== STYLE ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Inter", sans-serif;
       background: #faf8f0;
@@ -81,7 +77,6 @@
       margin-bottom: 18px;
     }
 
-    /* landing */
     .landing-head {
       text-align: center;
       margin: 12px 0 18px;
@@ -126,8 +121,25 @@
       cursor: not-allowed;
       transform: none;
     }
+    .btn-secondary {
+      background: #f0ede4;
+      border: none;
+      color: #1e3a2f;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 60px;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.15s;
+      cursor: pointer;
+      border: 1px solid #d0ccc0;
+    }
+    .btn-secondary:hover {
+      background: #e3dfd2;
+    }
 
-    /* progress */
     .progress-wrap {
       margin: 26px 0 18px;
       display: flex;
@@ -333,7 +345,6 @@
     }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-    /* biodata preview card */
     .biodata-preview {
       background: #FFFBEB;
       border-radius: 28px;
@@ -368,6 +379,90 @@
     .biodata-preview .value {
       color: #1f2f27;
       word-break: break-word;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-top: 6px;
+    }
+    .radio-group label {
+      font-weight: 400;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .radio-group input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #065F46;
+    }
+
+    .btn-wa {
+      background: #25D366;
+      border: none;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.15s;
+      margin-top: 12px;
+      text-decoration: none;
+      box-shadow: 0 6px 14px -4px #25d36680;
+    }
+    .btn-wa:hover {
+      background: #1da851;
+      transform: scale(1.02);
+    }
+
+    .btn-csv {
+      background: #2c3e50;
+      border: none;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.15s;
+      margin-top: 8px;
+      text-decoration: none;
+    }
+    .btn-csv:hover {
+      background: #1a2a3a;
+    }
+
+    .data-manager {
+      margin-top: 20px;
+      padding: 16px;
+      background: #f8f5ec;
+      border-radius: 28px;
+      border: 1px solid #e0dac8;
+      text-align: left;
+    }
+    .data-manager h3 {
+      color: #065F46;
+      margin-bottom: 10px;
+    }
+    .data-manager .stats {
+      font-size: 14px;
+      color: #2d4a3c;
+    }
+    .data-manager .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
     }
 
     @media (max-width: 480px) {
@@ -407,6 +502,16 @@
       </div>
     </div>
 
+    <!-- ADMIN: Manajemen Data -->
+    <div class="data-manager" id="dataManager">
+      <h3><i class="fas fa-database"></i> Manajemen Data (Admin)</h3>
+      <div class="stats" id="dataStats">Belum ada data tersimpan.</div>
+      <div class="actions">
+        <button class="btn-secondary" id="exportAllBtn"><i class="fas fa-file-excel"></i> Export Semua ke CSV</button>
+        <button class="btn-secondary" id="clearDataBtn" style="color:#b91c1c;"><i class="fas fa-trash-alt"></i> Hapus Semua Data</button>
+      </div>
+    </div>
+
     <!-- PREVIEW BIODATA RAMDAN -->
     <div class="biodata-preview">
       <h3><i class="fas fa-user-circle"></i> Contoh Biodata · Ramdan Ahmad Dijaya</h3>
@@ -440,6 +545,14 @@
 
     <!-- step 1 -->
     <div class="form-step active" data-step="1">
+      <div class="form-group">
+        <label><i class="fas fa-user-cog"></i> Saya mengisi sebagai:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="peran" value="calon" checked> Calon (untuk diri sendiri)</label>
+          <label><input type="radio" name="peran" value="admin"> Admin (mengisi untuk orang lain)</label>
+        </div>
+      </div>
+
       <div class="form-group"><label><i class="fas fa-user"></i> Nama Lengkap</label><input class="form-control" id="namaLengkap" placeholder="Nama sesuai KTP" value="Ramdan Ahmad Dijaya" /></div>
       <div class="form-group"><label><i class="fas fa-calendar-alt"></i> Usia</label><input class="form-control" id="usia" type="number" placeholder="24" value="24" /></div>
       <div class="form-group"><label><i class="fas fa-venus-mars"></i> Jenis Kelamin</label>
@@ -448,6 +561,12 @@
       <div class="form-group"><label><i class="fas fa-map-pin"></i> Domisili</label><input class="form-control" id="domisili" placeholder="Kota/Kabupaten" value="Kabupaten Kuningan, Jawa Barat" /></div>
       <div class="form-group"><label><i class="fab fa-whatsapp"></i> WA Wali (wajib)</label><input class="form-control" id="waWali" placeholder="08xxxxxxxx" value="08123456789" /></div>
       <div class="form-group"><label><i class="fas fa-envelope"></i> Email</label><input class="form-control" id="email" type="email" placeholder="email@domain.com" value="ramdan@example.com" /></div>
+
+      <div class="form-group" id="waCalonGroup" style="display:none;">
+        <label><i class="fab fa-whatsapp"></i> Nomor WhatsApp Calon <span style="color:#b91c1c;">*</span></label>
+        <input class="form-control" id="waCalon" placeholder="08xxxxxxxx" />
+        <div class="form-note">Diisi jika Anda admin yang mengisi untuk orang lain.</div>
+      </div>
     </div>
 
     <!-- step 2 -->
@@ -494,6 +613,12 @@
 
 <script>
   (function() {
+    // ========== GLOBAL ==========
+    const STORAGE_KEY = 'taaruf_data';
+
+    // ADMIN PHONE (ganti dengan nomor Anda)
+    const ADMIN_PHONE = '628123456789'; // contoh
+
     const landing = document.getElementById('landingPage');
     const formContainer = document.getElementById('formContainer');
     const statusScreen = document.getElementById('statusScreen');
@@ -507,12 +632,104 @@
     const nextBtn = document.getElementById('nextBtn');
     const submitBtn = document.getElementById('submitBtn');
 
+    const peranRadios = document.querySelectorAll('input[name="peran"]');
+    const waCalonGroup = document.getElementById('waCalonGroup');
+    const waCalonInput = document.getElementById('waCalon');
+
     const getVal = id => document.getElementById(id).value.trim();
     const getSel = id => document.getElementById(id).value;
 
     let currentStep = 1;
     const totalSteps = 4;
 
+    // ========== LOCAL STORAGE FUNCTIONS ==========
+    function getStoredData() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+      } catch { return []; }
+    }
+
+    function saveStoredData(data) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    function addData(payload) {
+      const all = getStoredData();
+      // Tambahkan timestamp
+      payload.timestamp = new Date().toISOString();
+      all.push(payload);
+      saveStoredData(all);
+      updateDataStats();
+    }
+
+    function clearAllData() {
+      if (confirm('Hapus semua data tersimpan?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        updateDataStats();
+      }
+    }
+
+    function updateDataStats() {
+      const all = getStoredData();
+      const stats = document.getElementById('dataStats');
+      if (all.length === 0) {
+        stats.textContent = 'Belum ada data tersimpan.';
+      } else {
+        stats.textContent = `Total ${all.length} data tersimpan.`;
+      }
+    }
+
+    // ========== EXPORT CSV ==========
+    function downloadCSV(dataArray, filename = 'biodata_taaruf.csv') {
+      if (!dataArray || dataArray.length === 0) {
+        alert('Tidak ada data untuk diekspor.');
+        return;
+      }
+      // Ambil semua key dari objek pertama sebagai header
+      const headers = Object.keys(dataArray[0]);
+      // Buat baris CSV
+      let csv = headers.join(',') + '\n';
+      dataArray.forEach(row => {
+        const values = headers.map(key => {
+          let val = row[key] || '';
+          // Jika ada koma atau kutip, bungkus dengan kutip
+          if (typeof val === 'string' && (val.includes(',') || val.includes('"') || val.includes('\n'))) {
+            val = `"${val.replace(/"/g, '""')}"`;
+          }
+          return val;
+        });
+        csv += values.join(',') + '\n';
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
+
+    function exportAll() {
+      const all = getStoredData();
+      if (all.length === 0) {
+        alert('Belum ada data tersimpan.');
+        return;
+      }
+      downloadCSV(all, 'semua_biodata_taaruf.csv');
+    }
+
+    function exportSingle(payload) {
+      downloadCSV([payload], 'biodata_single.csv');
+    }
+
+    // ========== UI TOGGLE WA CALON ==========
+    function toggleWaCalon() {
+      const isAdmin = document.querySelector('input[name="peran"]:checked').value === 'admin';
+      waCalonGroup.style.display = isAdmin ? 'block' : 'none';
+    }
+    peranRadios.forEach(r => r.addEventListener('change', toggleWaCalon));
+
+    // ========== STEP NAVIGATION ==========
     function updateUI() {
       steps.forEach((el, idx) => el.classList.toggle('active', idx === currentStep-1));
       dots.forEach((dot, idx) => dot.classList.toggle('active', idx < currentStep));
@@ -520,7 +737,6 @@
       prevBtn.disabled = currentStep === 1;
       nextBtn.style.display = currentStep < totalSteps ? 'inline-flex' : 'none';
       submitBtn.style.display = currentStep === totalSteps ? 'inline-flex' : 'none';
-      // Scroll ke atas form
       document.getElementById('appCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
@@ -531,21 +747,48 @@
         const dom = getVal('domisili');
         const wa = getVal('waWali');
         const email = getVal('email');
-        if (!nama || !usia || !dom || !wa || !email) return false;
-        if (isNaN(usia) || parseInt(usia) < 17) return false;
-        // Validasi WA lebih fleksibel (bisa 8-15 digit)
-        if (!wa.match(/^[0-9]{8,15}$/)) return false;
-        if (!email.includes('@') || !email.includes('.')) return false;
+        if (!nama || !usia || !dom || !wa || !email) {
+          alert('⚠️ Semua field di step 1 wajib diisi.');
+          return false;
+        }
+        if (isNaN(usia) || parseInt(usia) < 17) {
+          alert('⚠️ Usia minimal 17 tahun.');
+          return false;
+        }
+        if (!wa.match(/^[0-9]{8,15}$/)) {
+          alert('⚠️ Nomor WA Wali harus 8-15 digit angka.');
+          return false;
+        }
+        if (!email.includes('@') || !email.includes('.')) {
+          alert('⚠️ Email tidak valid.');
+          return false;
+        }
+
+        const isAdmin = document.querySelector('input[name="peran"]:checked').value === 'admin';
+        if (isAdmin) {
+          const waCalon = getVal('waCalon');
+          if (!waCalon || !waCalon.match(/^[0-9]{8,15}$/)) {
+            alert('⚠️ Nomor WhatsApp Calon wajib diisi dengan benar (8-15 digit angka).');
+            return false;
+          }
+        }
         return true;
       }
       if (step === 2) {
         const kerja = getVal('pekerjaan');
-        if (!kerja) return false;
+        if (!kerja) {
+          alert('⚠️ Pekerjaan wajib diisi.');
+          return false;
+        }
         return true;
       }
       if (step === 3) return true;
       if (step === 4) {
-        return document.getElementById('komitmenJujur').checked;
+        if (!document.getElementById('komitmenJujur').checked) {
+          alert('⚠️ Harap centang komitmen jujur.');
+          return false;
+        }
+        return true;
       }
       return true;
     }
@@ -558,10 +801,7 @@
 
     function nextStep() {
       if (currentStep < totalSteps) {
-        if (!validateStep(currentStep)) {
-          alert('⚠️ Mohon lengkapi data dengan benar:\n- WA Wali: 8-15 digit angka\n- Email: format yang valid');
-          return;
-        }
+        if (!validateStep(currentStep)) return;
         goToStep(currentStep + 1);
       }
     }
@@ -570,34 +810,12 @@
       if (currentStep > 1) goToStep(currentStep - 1);
     }
 
-    // Event: Tombol Mulai
-    startBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      landing.classList.add('hidden');
-      formContainer.classList.remove('hidden');
-      statusScreen.classList.add('hidden');
-      goToStep(1);
-    });
+    // ========== SUBMIT ==========
+    function handleSubmit() {
+      if (!validateStep(4)) return;
 
-    // Event: Navigasi
-    nextBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      nextStep();
-    });
-
-    prevBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      prevStep();
-    });
-
-    // Event: Submit
-    submitBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      if (!validateStep(4)) {
-        alert('⚠️ Harap centang komitmen jujur.');
-        return;
-      }
+      const isAdmin = document.querySelector('input[name="peran"]:checked').value === 'admin';
+      const waCalon = isAdmin ? getVal('waCalon') : null;
 
       const payload = {
         nama_lengkap: getVal('namaLengkap'),
@@ -612,55 +830,123 @@
         tentang_saya: getVal('tentangSaya'),
         ibadah: getVal('ibadah'),
         visi_nikah: getVal('visiNikah'),
-        kriteria: getVal('kriteria')
+        kriteria: getVal('kriteria'),
+        peran: isAdmin ? 'admin' : 'calon',
+        wa_calon: waCalon || ''
       };
 
-      // Disable tombol & tampilkan loading
+      // ===== SIMPAN KE LOCAL STORAGE =====
+      addData(payload);
+
+      // ===== BUAT PESAN WA =====
+      let nomorTujuan = isAdmin ? waCalon : ADMIN_PHONE;
+      nomorTujuan = nomorTujuan.replace(/\s+/g, '').replace(/[-()]/g, '');
+      if (nomorTujuan.startsWith('0')) {
+        nomorTujuan = '62' + nomorTujuan.substring(1);
+      } else if (!nomorTujuan.startsWith('62')) {
+        nomorTujuan = '62' + nomorTujuan;
+      }
+
+      const pesan = 
+`*Biodata Ta'aruf Al-Mizan*
+Nama: ${payload.nama_lengkap}
+Usia: ${payload.usia} tahun
+Jenis Kelamin: ${payload.jenis_kelamin}
+Domisili: ${payload.domisili}
+Pendidikan: ${payload.pendidikan}
+Pekerjaan: ${payload.pekerjaan}
+Status Nikah: ${payload.status_nikah}
+WA Wali: ${payload.wa_wali}
+Email: ${payload.email}
+
+Tentang Saya:
+${payload.tentang_saya}
+
+Ibadah:
+${payload.ibadah}
+
+Visi Nikah:
+${payload.visi_nikah}
+
+Kriteria Pasangan:
+${payload.kriteria}
+
+--- 
+Dikirim dari sistem Ta'aruf Al-Mizan (${new Date().toLocaleString()})`;
+
+      // ===== KIRIM KE APPS SCRIPT (opsional, tidak wajib) =====
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="loader"></span> Mengirim...';
+      submitBtn.innerHTML = '<span class="loader"></span> Menyimpan...';
 
-      // ⚠️ GUNAKAN URL APPS SCRIPT ANDA (dengan kutip)
+      // Kirim ke Google Sheets (jika ingin, tapi kita sudah simpan lokal)
       const url = 'https://script.google.com/macros/s/AKfycbzO-QiCIDrZJ8TetslkCsMHtM-8UkqsBZcQbCHN8SNbfgscc0NJZfeoFSO-OWZnwKHI/exec';
-
-      // Kirim data dengan mode no-cors agar tidak kena CORS
       fetch(url, {
         method: 'POST',
-        mode: 'no-cors',  // <-- PENTING untuk Apps Script
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
-      })
-      .then(() => {
-        // Karena mode no-cors, response tidak bisa dibaca
-        // Tapi data tetap terkirim! Anggap sukses.
-        formContainer.classList.add('hidden');
-        statusScreen.classList.remove('hidden');
-        statusContent.innerHTML = `
-          <i class="fas fa-check-circle" style="color:#065F46;"></i>
-          <h2>Barakallahu Fiik</h2>
-          <p style="font-size:18px; font-weight:500;">Biodata Berhasil Terkirim</p>
-          <p style="color:#3d5a4b;">akan kami hubungi via Wali</p>
-          <div class="privacy-note"><i class="fas fa-shield-alt"></i> Data aman hanya admin yang melihat</div>
-        `;
-      })
-      .catch(() => {
-        // Fallback: anggap sukses karena no-cors tidak bisa deteksi error
-        formContainer.classList.add('hidden');
-        statusScreen.classList.remove('hidden');
-        statusContent.innerHTML = `
-          <i class="fas fa-check-circle" style="color:#065F46;"></i>
-          <h2>Barakallahu Fiik</h2>
-          <p style="font-size:18px; font-weight:500;">Biodata Berhasil Terkirim</p>
-          <p style="color:#3d5a4b;">akan kami hubungi via Wali</p>
-          <div class="privacy-note"><i class="fas fa-shield-alt"></i> Data aman hanya admin yang melihat</div>
-        `;
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Biodata';
+      }).catch(() => {}) // abaikan error, tetap lanjut
+
+      // ===== TAMPILKAN STATUS =====
+      formContainer.classList.add('hidden');
+      statusScreen.classList.remove('hidden');
+      statusContent.innerHTML = `
+        <i class="fas fa-check-circle" style="color:#065F46;"></i>
+        <h2>Barakallahu Fiik</h2>
+        <p style="font-size:18px; font-weight:500;">Biodata Berhasil Tersimpan!</p>
+        <p style="color:#3d5a4b;">Data sudah disimpan di perangkat ini. Gunakan tombol di bawah untuk mengirim via WhatsApp atau unduh CSV.</p>
+        <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+          <a href="https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}" target="_blank" class="btn-wa">
+            <i class="fab fa-whatsapp"></i> Kirim ke WhatsApp
+          </a>
+          <button class="btn-csv" id="downloadSingleBtn"><i class="fas fa-file-excel"></i> Unduh CSV (Data Ini)</button>
+        </div>
+        <div class="privacy-note" style="margin-top: 16px;">
+          <i class="fas fa-shield-alt"></i> Data aman tersimpan di browser Anda.
+        </div>
+      `;
+
+      // Event untuk download single
+      document.getElementById('downloadSingleBtn').addEventListener('click', function() {
+        exportSingle(payload);
       });
+
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Biodata';
+    }
+
+    // ========== EVENT LISTENERS ==========
+    startBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      landing.classList.add('hidden');
+      formContainer.classList.remove('hidden');
+      statusScreen.classList.add('hidden');
+      toggleWaCalon();
+      goToStep(1);
     });
 
-    // Keyboard: Enter untuk lanjut / submit
+    nextBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      nextStep();
+    });
+
+    prevBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      prevStep();
+    });
+
+    submitBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      handleSubmit();
+    });
+
+    // Export all
+    document.getElementById('exportAllBtn').addEventListener('click', exportAll);
+
+    // Clear data
+    document.getElementById('clearDataBtn').addEventListener('click', clearAllData);
+
+    // Keyboard Enter
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         const isFormVisible = !formContainer.classList.contains('hidden');
@@ -675,9 +961,12 @@
       }
     });
 
-    // Inisialisasi
+    // ========== INISIALISASI ==========
+    updateDataStats();
     updateUI();
+    toggleWaCalon();
+
   })();
 </script>
 </body>
-</html>
+      </html>
