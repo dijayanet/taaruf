@@ -1,615 +1,643 @@
-<!DOCTYPE html><html lang="en"><head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <title>RuangMu Platform Kuliah</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">        
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-    <!-- main css -->
-    <link rel="stylesheet" href="css/style.css">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+  <title>Ta'aruf Al-Mizan · Ramdan Ahmad Dijaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Inter", sans-serif;
+      background: #faf8f0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .card {
+      max-width: 820px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 40px 40px 32px 32px;
+      box-shadow: 0 20px 40px -12px rgba(6, 95, 70, 0.15);
+      padding: 28px 24px 36px;
+      border: 1px solid rgba(6, 95, 70, 0.05);
+    }
+    .bg-emerald { background: #065F46; }
+    .text-emerald { color: #065F46; }
+    .border-emerald { border-color: #065F46; }
+    .bg-krem { background: #FFFBEB; }
+    .text-krem { color: #FFFBEB; }
 
-  <link rel="manifest" href="/manifest.json">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="RuangMu Platform Kuliah">
-  <meta name="apple-mobile-web-app-title" content="RuangMu Platform Kuliah">
-  <meta name="msapplication-starturl" content="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/png" sizes="48x48" href="images/simaster48.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="48x48" href="images/simaster48.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/simaster192.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="images/simaster192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/simaster512.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="images/simaster512.png">
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .logo-icon {
+      background: #065F46;
+      color: #FFFBEB;
+      width: 42px;
+      height: 42px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 600;
+      box-shadow: 0 8px 12px -6px rgba(6, 95, 70, 0.2);
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -0.3px;
+      color: #065F46;
+    }
+    .logo-text span {
+      font-weight: 300;
+      color: #4b7b6b;
+    }
+    .tagline {
+      font-size: 14px;
+      color: #4b6b5e;
+      margin-top: -4px;
+      font-weight: 400;
+      border-left: 3px solid #065F46;
+      padding-left: 14px;
+      background: #FFFBEB;
+      border-radius: 0 12px 12px 0;
+      padding: 8px 14px;
+      margin-bottom: 18px;
+    }
 
+    /* landing */
+    .landing-head {
+      text-align: center;
+      margin: 12px 0 18px;
+    }
+    .landing-head h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #065F46;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .landing-head h1 i {
+      color: #d4a373;
+      margin: 0 6px;
+    }
+    .btn-primary {
+      background: #065F46;
+      border: none;
+      color: #FFFBEB;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 18px -6px rgba(6, 95, 70, 0.3);
+      transition: 0.15s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .btn-primary:hover {
+      background: #064e3b;
+      transform: scale(1.01);
+      box-shadow: 0 12px 24px -8px #065f4660;
+    }
+    .btn-primary i {
+      font-size: 18px;
+    }
 
-    
-  </head>
+    /* progress */
+    .progress-wrap {
+      margin: 26px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .step-indicators {
+      display: flex;
+      flex: 1;
+      gap: 6px;
+    }
+    .step-dot {
+      flex: 1;
+      height: 6px;
+      background: #e4e0d6;
+      border-radius: 12px;
+      transition: 0.25s;
+    }
+    .step-dot.active {
+      background: #065F46;
+      box-shadow: 0 0 0 2px #065f4620;
+    }
+    .step-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #065F46;
+      background: #FFFBEB;
+      padding: 4px 14px;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
 
-  <body>
-    <!--================ Start Header Menu Area =================-->
-    <header class="header_area">
-      <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html"><img src="images/headernew.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"></span> <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-              <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#prodi">Kelas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#sumberbelajar">Sumber Belajar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#fitur">Fitur</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#keunggulan">Keunggulan</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://ruangmu.upmk.ac.id/install.php">Install</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#login">Login</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+    .form-step {
+      display: none;
+      animation: fade 0.25s ease;
+    }
+    .form-step.active {
+      display: block;
+    }
+    @keyframes fade {
+      0% { opacity: 0.4; transform: translateY(4px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      color: #1e2e28;
+      margin-bottom: 5px;
+      letter-spacing: -0.2px;
+    }
+    .form-group label i {
+      color: #065F46;
+      width: 20px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #e4e0d6;
+      border-radius: 20px;
+      font-size: 15px;
+      background: #fefcf6;
+      transition: 0.15s;
+      font-family: "Inter", sans-serif;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #065F46;
+      box-shadow: 0 0 0 4px #065f4618;
+      background: white;
+    }
+    select.form-control {
+      appearance: auto;
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 72px;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #FFFBEB;
+      padding: 14px 18px;
+      border-radius: 24px;
+      border: 1px solid #e8e2d0;
+    }
+    .checkbox-group input {
+      margin-top: 4px;
+      width: 20px;
+      height: 20px;
+      accent-color: #065F46;
+    }
+    .checkbox-group label {
+      font-weight: 400;
+      color: #1e2e28;
+    }
+    .form-note {
+      font-size: 13px;
+      color: #5f6f66;
+      margin-top: 6px;
+      padding-left: 6px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #d0ccc0;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #2d3d35;
+      transition: 0.15s;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .btn-outline:hover {
+      border-color: #065F46;
+      background: #f2f9f5;
+    }
+    .btn-next {
+      background: #065F46;
+      border: none;
+      color: white;
+      padding: 10px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: 0.15s;
+      box-shadow: 0 4px 10px -4px #065f4650;
+    }
+    .btn-next:hover {
+      background: #064e3b;
+    }
+    .btn-next:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .status-screen {
+      text-align: center;
+      padding: 24px 8px 8px;
+    }
+    .status-screen i {
+      font-size: 56px;
+      color: #065F46;
+      background: #FFFBEB;
+      padding: 18px;
+      border-radius: 60px;
+      margin-bottom: 16px;
+    }
+    .status-screen h2 {
+      font-size: 26px;
+      color: #065F46;
+      font-weight: 700;
+    }
+    .status-screen p {
+      color: #2d4a3c;
+      max-width: 340px;
+      margin: 10px auto;
+    }
+    .privacy-note {
+      font-size: 13px;
+      background: #FFFBEB;
+      padding: 12px 16px;
+      border-radius: 30px;
+      color: #2d4a3c;
+      margin-top: 20px;
+      border: 1px solid #e0dac8;
+      display: inline-block;
+    }
+
+    .loader {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      border: 4px solid #e4e0d6;
+      border-top: 4px solid #065F46;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    /* biodata preview card */
+    .biodata-preview {
+      background: #FFFBEB;
+      border-radius: 28px;
+      padding: 20px 22px;
+      margin: 16px 0 8px;
+      border: 1px solid #e8e0cc;
+    }
+    .biodata-preview h3 {
+      color: #065F46;
+      font-size: 18px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .biodata-preview .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      font-size: 14px;
+      padding: 4px 0;
+      border-bottom: 1px dashed #ddd6c4;
+    }
+    .biodata-preview .row:last-child {
+      border-bottom: none;
+    }
+    .biodata-preview .label {
+      font-weight: 600;
+      color: #1e3a2f;
+      min-width: 100px;
+    }
+    .biodata-preview .value {
+      color: #1f2f27;
+      word-break: break-word;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 20px 16px; }
+      .landing-head h1 { font-size: 22px; }
+      .btn-primary { width: 100%; justify-content: center; }
+      .logo-text { font-size: 20px; }
+      .step-label { font-size: 12px; padding: 3px 12px; }
+      .biodata-preview .label { min-width: 80px; }
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+<div class="card" id="appCard">
+  <!-- header -->
+  <div class="logo-area">
+    <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+    <div class="logo-text">Ta'aruf <span>Al-Mizan</span></div>
+  </div>
+  <div class="tagline">
+    <i class="fas fa-hand-holding-heart" style="color:#065F46; margin-right:8px;"></i>
+    Ikhtiar terarah · Berkah pernikahan
+  </div>
+
+  <!-- LANDING PAGE -->
+  <div id="landingPage">
+    <div class="landing-head">
+      <h1><i class="fas fa-ring"></i> Ikhtiar Menuju <br>Pernikahan Berkah</h1>
+      <div style="margin: 20px 0 10px;">
+        <button class="btn-primary" id="startBiodataBtn">
+          <i class="fas fa-pen-fancy"></i> Isi Biodata Sekarang
+        </button>
       </div>
-    </header>
-    <!--================ End Header Menu Area =================-->
-
-    <!--================ Start Home Banner Area =================-->
-    <section class="home_banner_area">
-      <div id="home" class="banner_inner">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="banner_content text-center">
-                <h3 class="text-uppercase mt-4 mb-5">
-                  Selamat Datang Di RuangMu Platform Kuliah <br>STKIP Muhammadiyah Kuningan
-                </h3>
-                <br>
-                <div>
-                  <a href="#login" class="primary-btn2 mb-3 mb-sm-0"><span class="fa fa-user"></span> Login</a>
-                  <a href="https://ruangmu.upmk.ac.id/install.php" class="danger-btn2 ml-sm-3 ml-0"><span class="fa fa-whatsapp"></span> Install</a>
-                  <a href="https://api.whatsapp.com/send?phone=62082129650485&amp;text=Assalamuallaikum,%20Saya%20Mahasiswa%20dari%20Prodi...%20Semester...%20Mau%20Bertanya%20tentang.." class="danger-btn2 ml-sm-3 ml-0"><span class="fa fa-whatsapp"></span> Butuh Bantuan?</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================ End Home Banner Area =================-->
-
-    <!--================ Start About Area =================-->
-    <div section="" class="feature_area section_gap_top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-md-12">
-                <div class="section-top-border">
-                  <div class="single_feature">
-                    <div class="desc">
-                  <h3 class="mb-30 title_color">RuangMu Platfrom Kuliah</h3>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <blockquote class="generic-blockquote">
-                      <p>RuangMu Platform kuliah adalah Learning Management System (LMS) yang dikembangkan sesuai dengan kebutuhan pembelajaran untuk dosen dan mahasiswa <a href="https://www.instagram.com/stkipmkng/">@stkipmkng�&nbsp;</a>.</p>
-                      <br>
-                      <p>RuangMu Plafform kuliah mengakomodasi proses pembelajaran dari mulai perencanaan, proses dan evaluasi. Platform Kuliah dapat digunakan untuk pembelajaran daring, blended/hybrid dan sebagai suplement pembelajaran.</p>
-                      </blockquote>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-    <!--================ End About Area =================-->
-
-    <!--================ Start Kelas Area =================-->
-    <div id="prodi" class="popular_courses">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="main_title">
-              <h2 class="mb-3">Pilih Kelas</h2>
-              <p>
-                Pilih Kelas Sesuai Prodi Masing-Masing
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- single course -->
-          <div class="col-lg-12">
-            <div class="owl-carousel active_course">
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="images/ptik.png" alt="">
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">PTIK</span>
-                  <h4 class="mb-3">
-                    <a>Pendidikan Teknologi Informasi dan Komunikasi</a>
-                  </h4>
-                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                  <a class="btn btn-danger" href="#login" role="button">List Mata Kuliah</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="images/pjkr.png" alt="">
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">PJKR</span>
-                  <h4 class="mb-3">
-                    <a>Pendidikan Jasmani Kesehatan dan Rekreasi</a>
-                  </h4>
-                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                  <a class="btn btn-danger" href="#login" role="button">List Mata kuliah</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="images/pmtk.png" alt="">
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">PMTK</span>
-                  <h4 class="mb-3">
-                    <a>Pendidikan Matematika</a>
-                  </h4>
-                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                  <a class="btn btn-danger" href="#login" role="button">List Mata Kuliah</a>
-                  </div>
-                </div>
-              </div>
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="images/pgpaud.png" alt="">
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">PGPAUD</span>
-                  <h4 class="mb-3">
-                    <a>Pendidikan Guru Pendidikan Anak Usia Dini</a>
-                  </h4>
-                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                  <a class="btn btn-danger" href="#login" role="button">List Mata Kuliah</a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="images/pbsd.png" alt="">
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">PBSD</span>
-                  <h4 class="mb-3">
-                    <a>Pendidikan Bahasa dan Sastra Daerah</a>
-                  </h4>
-                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                  <a class="btn btn-danger" href="#login" role="button">List Mata Kuliah</a>
-                  </div>
-                </div>
-              </div>
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="images/pgsd.png" alt="">
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">PGSD</span>
-                  <h4 class="mb-3">
-                    <a>Pendidikan Guru Sekolah Dasar</a>
-                  </h4>
-                  <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                  <a class="btn btn-danger" href="#login" role="button">List Mata Kuliah</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================ End Kelas Area =================-->
-
-    <!--================ Start Statistik Area =================-->
-    <div class="section_gap registration_area">
-      <div class="container box-stats">        
-        <div class="row align-items-center">          
-          <div class="col-lg-12 title-stats">
-            <h1 class="mb-3">Statistik Layanan</h1>
-          </div>          
-          <div class="col-lg-3 stats">
-            <h1 class="days">100%</h1>
-            <span class="smalltext">Mata Kuliah Tersedia</span>
-          </div>
-          <div class="col-lg-3 stats">
-            <h1 class="days">100%</h1>
-            <span class="smalltext">Kelas Tersedia</span>
-          </div>
-          <div class="col-lg-3 stats">
-            <h1 class="days">100%</h1>
-            <span class="smalltext">Dosen Mengajar</span>
-          </div>
-          <div class="col-lg-3 stats">
-            <h1 class="days">100%</h1>
-            <span class="smalltext">Mahasiswa Tergabung</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================ End Statistik Area =================-->
-
-    <!--================ Start Fitur Area =================-->
-    <section class="feature_area">
-      <div id="sumberbelajar" class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-          <br>
-          <br>
-            <br>
-            <div class="main_title">
-              <h2 class="mb-3">Sumber Belajar</h2>
-              <p>
-                Sumber dan bahan ajar eksternal yang dapat diakses
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="desc"><h4 class="mb-3">Sumber Konten Belajar</h4>
-            <ul class="list-group">
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://youtube.com">Youtube (Vidio)</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://open.spotify.com/search/podcast">Podcast (Audio)</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://www.slideshare.net/">Slideshare (Slide)</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://id.wikipedia.org">Wikipedia (Ensiklopedi)</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://www.academia.edu/">Academia (Makalah)</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://scholar.google.com">Scholar (Jurnal)</a></li>
-            </ul>
-            </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="desc"><h4 class="mb-3">Sumber Aplikasi Belajar</h4>
-            <ul class="list-group">
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://www.pustaka.ut.ac.id/lib/ruangbaca/">Ruang Baca Virtual (Ebook)</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://books.google.com">Google Book (E-Book)</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://play.google.com/store/books">Play Book (E-Book)</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://play.google.com/store/apps/category/EDUCATION">Play Store (Edu Apps)</a></li>
-            </ul>
-            
-          </div>
-        </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="desc"><h4 class="mb-3">Portal Belajar</h4>
-            <ul class="list-group">
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="https://spada.kemdikbud.go.id">SPADA Kemdikbud</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="http://spada.upi.edu/">SPADA UPI</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="http://ocw.ui.ac.id/">OCW Universitas Indonesia</a></li>
-              <li class="list-group-item"><span class="fa fa-check"></span> <a target="_blank" href="http://ocw.binadarma.ac.id/">OCW Bina Darma</a></li>
-			</ul>
-          </div>
-        </div>
-      </div>
-    </div></div></section>
-    <!--================ End Fitur Area =================-->
-
-    <!--================ Start Fitur Area =================-->
-    <section class="feature_area section_gap_top">
-      <div id="fitur" class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <br>
-            <div class="main_title">
-              <h2 class="mb-3">Fitur</h2>
-              <p>
-                Fitur dari layanann Platfrom Kuliah
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="desc">
-            <ul class="list-group">
-              <li class="list-group-item"><span class="fa fa-check"></span> Rencana Pembelajaran Semester</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> File Referensi</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Profil mahasiswa</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Absensi dan Swa Absensi</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Upload materi dan bahan ajar</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Blog materi dan bahan ajar</li>
-            </ul>
-            </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="desc">
-            <ul class="list-group">
-              <li class="list-group-item"><span class="fa fa-check"></span> Diskusi utama &amp; Per Topik</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Private Discussion</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Presentasi</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Penugasan</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Quiz</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> UTS Online</li>
-            </ul>
-          </div>
-        </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="desc">
-            <ul class="list-group">
-              <li class="list-group-item"><span class="fa fa-check"></span> UAS Online</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Penilaian</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Feedback Tugas dan Ujian</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Multiplatform</li>
-              <li class="list-group-item"><span class="fa fa-check"></span> Jadwal dan Link Meeting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div></div></section>
-    <!--================ End Fitur Area =================-->
-
-        <!--================ Start Keungulan Area =================-->
-        <section class="feature_area section_gap_top">
-          <div class="container">
-            <div id="keunggulan" class="row justify-content-center">
-              <div class="col-lg-5">
-                <br>
-                <div class="main_title">
-                  <h2 class="mb-3">Keunggulan</h2>
-                  <p>
-                    Keunggulan penggunaan Platfrom Kuliah
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-12 col-md-12">
-                <div class="single_feature">
-                  <div class="desc">
-                    <ul class="list-group">
-                      <li class="list-group-item"><span class="ti-arrow-circle-right"></span> Disesuaikan dengan SN DIKTI</li>
-                      <li class="list-group-item"><span class="ti-arrow-circle-right"></span> Terintegrasi dengan Sistem Akademik</li>
-                      <li class="list-group-item"><span class="ti-arrow-circle-right"></span> Dosen tidak perlu membuat kelas</li>
-                      <li class="list-group-item"><span class="ti-arrow-circle-right"></span> Mahasiswa tidak perlu join kelas</li>
-                      <li class="list-group-item"><span class="ti-arrow-circle-right"></span> Mendukung beragam format materi/bahan ajar, termasuk Youtube</li>
-                      <li class="list-group-item"><span class="ti-arrow-circle-right"></span> Multi Platform</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--================ End Keunggulan Area =================-->
-
-    <!--================ Start Testimonial Area =================-->
-    <div id="login" class="testimonial_area section_gap">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-12">
-            <div class="main_title">
-              <h2 class="mb-3">Login</h2>
-              <p>
-                Masuk ke Platform
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 col-md-12">
-            <div class="single_feature">
-
-
-      <form action="validation.php" method="post">
-        <div class="input-group mb-3">
-          <input name="username" type="text" class="form-control" placeholder="Username">
-        </div>
-        <div class="input-group mb-3">
-          <input name="password" type="password" class="form-control" placeholder="Password">
-        </div>
-        <div class="row">
-          <div class="col-6">
-	          <img src="captcha.php">
-          </div>
-          <div class="col-6">
-	        <div class="input-group mb-3">
-	          <input class="form-control" name="captcha" type="text" maxlength="5" size="9" placeholder="Kode">
-	        </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            <button type="submit" class="btn btn-block btn-primary btn-block">Masuk</button>
-          </div>
-        </div>
-      </form>
-
-			</div>
-		  </div>
-        </div>
+      <div style="margin-top: 16px; font-size:14px; color:#4f6b5e; background:#FFFBEB; padding:6px 12px; border-radius:40px; display:inline-block;">
+        <i class="fas fa-shield-alt" style="color:#065F46;"></i> Data aman · hanya admin
       </div>
     </div>
-    <!--================ End Testimonial Area =================-->
 
+    <!-- PREVIEW BIODATA RAMDAN -->
+    <div class="biodata-preview">
+      <h3><i class="fas fa-user-circle"></i> Contoh Biodata · Ramdan Ahmad Dijaya</h3>
+      <div class="row"><span class="label"><i class="fas fa-user"></i> Nama</span><span class="value">Ramdan Ahmad Dijaya, S.Pd.</span></div>
+      <div class="row"><span class="label"><i class="fas fa-venus-mars"></i> Jenis Kelamin</span><span class="value">Ikhwan (Laki-laki)</span></div>
+      <div class="row"><span class="label"><i class="fas fa-calendar-alt"></i> Usia</span><span class="value">24 Tahun</span></div>
+      <div class="row"><span class="label"><i class="fas fa-graduation-cap"></i> Pendidikan</span><span class="value">S1 Pendidikan Teknologi Informasi (Cum Laude)</span></div>
+      <div class="row"><span class="label"><i class="fas fa-briefcase"></i> Pekerjaan</span><span class="value">Guru Informatika · Web Developer · Freelancer</span></div>
+      <div class="row"><span class="label"><i class="fas fa-map-pin"></i> Domisili</span><span class="value">Kabupaten Kuningan, Jawa Barat</span></div>
+      <div class="row"><span class="label"><i class="fas fa-heart"></i> Status</span><span class="value">Belum Menikah</span></div>
+      <div class="row"><span class="label"><i class="fas fa-flag"></i> Visi Nikah</span><span class="value">Membangun keluarga sakinah, mawaddah, warahmah</span></div>
+      <div style="margin-top:12px; font-size:13px; color:#3d5a4b; background:#f2f5ea; padding:8px 14px; border-radius:30px;">
+        <i class="fas fa-check-circle" style="color:#065F46;"></i> 
+        <strong>Kriteria idaman:</strong> Muslimah salat 5 waktu, berakhlak mulia, siap bertumbuh bersama
+      </div>
+    </div>
+  </div>
 
-          <!--================ Start Pusat Bantuan Area =================-->
-          <section class="feature_area section_gap_top">
-            <div class="container">
-              <div id="pusatbantuan" class="row justify-content-center">
-                <div class="col-lg-5">
-                  <div class="main_title">
-                    <h2 class="mb-3">Pusat Bantuan</h2>
-                    <p>
-                      Hubungi kami jika ada kesulitan mengakses layanan Platform Kuliah.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <div class="single_feature">
-                    <div class="desc">
-                      <h4 class="mt-3 mb-2">Hubungi Kami</h4>
-                      <p>
-                        Telp: 0811-2233-0393
-                      </p>
-                      <p>
-                        Email: its@upmk.ac.id
-                      </p>
-                      <br>
-                      <p>
-                        Lt 3 Gedung Rektorat.
-                      </p>
-                      <p>Kampus STKIP Muhammadiyah Kuningan</p>
-                      <p>Jl. R.A Moertasiah Soepomo No.28B Kuningan Jawa Barat, 45511</p>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="col-lg-4 col-md-6">
-                  <div class="single_feature">
-                    <div class="desc">
-                      <h4 class="mt-3 mb-2">Rujukan Penting</h4>
-                      <p>
-                        <a href="https://api.whatsapp.com/send?phone=6282129650485&amp;text=Saya%20Lupa%20Password%0ANIM:%0ATgl%20Lahir:%0ATerima%20kasih&amp;source=&amp;data=">Lupa Password</a>
-                      </p>
-                      <p>
-                        <a href="">Ebook Panduan</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="col-lg-4 col-md-6">
-                  <div class="single_feature">
-                    <div class="desc">
-                      <h4 class="mt-3 mb-2">Butuh Bantuan?</h4>
-                      <p>
-                        Silahkan hubungi Tim SDI STKIP melalui chat Whatsapp di bawah ini.
-                      </p>
-                      <br>
-                      <a href="https://api.whatsapp.com/send?phone=6281122330393&amp;text=Assalamuallaikum,%20Saya%20Mahasiswa%20dari%20Prodi...%20Semester...%20Mau%20Bertanya%20tentang.." class="btn btn-outline-primary"><span class="fa fa-whatsapp"></span> Whatsapp Tim SDI STKIP</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <br>
-          <br>
-          <!--================ End Pusat Bantuan Area =================-->
-
-
-    <!--================ Start footer Area  =================-->
-    <footer class="footer-area section_gapp">
-      <div class="container">
-        <br>
-        <center>
-          <p class="text-muted">
-            <img src="images/favicon.png" alt="Logo STKIP Muhammadiyah Kuningan">
-        <br>
-            <font size="1" face="Times New Roman">© 2020 Sistem Data Dan Informasi STKIP Muhammadiyah Kuningan</font>
-        <br>
-            <font size="1" face="Times New Roman">Jl. R.A Moertasiah Soepomo No.28B Kuningan Jawa Barat, 45511 | Email: info@upmk.ac.id | Phone (0232) 874085</font>
-        <br>
-            <font size="1" face="Times New Roman">Credit Site | Legal | FAQ</font>
-          </p>
-        </center>
-        </div>
-      </footer></div>
-    
-    <!--================ End footer Area  =================-->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script id="facebook-jssdk" src="https://connect.facebook.net/id_ID/sdk/xfbml.customerchat.js"></script><script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/owl-carousel-thumb.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <!--gmaps Js-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-    <script src="js/gmaps.min.js"></script>
-    <script src="js/theme.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-
-	
-  <!-- Messenger Plugin Obrolan Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Plugin Obrolan code -->
-    <div id="fb-customer-chat" class="fb-customerchat" page_id="362899060413783" attribution="biz_inbox">
+  <!-- FORM (multi-step) -->
+  <div id="formContainer" class="hidden">
+    <!-- progress -->
+    <div class="progress-wrap">
+      <div class="step-indicators" id="stepDots">
+        <span class="step-dot active"></span>
+        <span class="step-dot"></span>
+        <span class="step-dot"></span>
+        <span class="step-dot"></span>
+      </div>
+      <span class="step-label" id="stepCounter">1 / 4</span>
     </div>
 
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "362899060413783");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
+    <!-- step 1 -->
+    <div class="form-step active" data-step="1">
+      <div class="form-group"><label><i class="fas fa-user"></i> Nama Lengkap</label><input class="form-control" id="namaLengkap" placeholder="Nama sesuai KTP" value="Ramdan Ahmad Dijaya" /></div>
+      <div class="form-group"><label><i class="fas fa-calendar-alt"></i> Usia</label><input class="form-control" id="usia" type="number" placeholder="24" value="24" /></div>
+      <div class="form-group"><label><i class="fas fa-venus-mars"></i> Jenis Kelamin</label>
+        <select class="form-control" id="jenisKelamin"><option value="Ikhwan" selected>Ikhwan (Laki-laki)</option><option value="Akhwat">Akhwat (Perempuan)</option></select>
+      </div>
+      <div class="form-group"><label><i class="fas fa-map-pin"></i> Domisili</label><input class="form-control" id="domisili" placeholder="Kota/Kabupaten" value="Kabupaten Kuningan, Jawa Barat" /></div>
+      <div class="form-group"><label><i class="fab fa-whatsapp"></i> WA Wali (wajib)</label><input class="form-control" id="waWali" placeholder="08xxxxxxxx" value="08123456789" /></div>
+      <div class="form-group"><label><i class="fas fa-envelope"></i> Email</label><input class="form-control" id="email" type="email" placeholder="email@domain.com" value="ramdan@example.com" /></div>
+    </div>
 
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v16.0'
-        });
+    <!-- step 2 -->
+    <div class="form-step" data-step="2">
+      <div class="form-group"><label><i class="fas fa-graduation-cap"></i> Pendidikan Terakhir</label>
+        <select class="form-control" id="pendidikan"><option value="SMA/SMK">SMA/SMK</option><option value="D3">D3</option><option value="S1" selected>S1</option><option value="S2">S2</option><option value="Lainnya">Lainnya</option></select>
+      </div>
+      <div class="form-group"><label><i class="fas fa-briefcase"></i> Pekerjaan</label><input class="form-control" id="pekerjaan" placeholder="Guru, Developer, dll" value="Guru Informatika · Web Developer · Freelancer" /></div>
+      <div class="form-group"><label><i class="fas fa-heart"></i> Status Pernikahan</label>
+        <select class="form-control" id="statusNikah"><option value="Belum Menikah" selected>Belum Menikah</option><option value="Pernah Menikah">Pernah Menikah</option><option value="Cerai">Cerai</option></select>
+      </div>
+    </div>
+
+    <!-- step 3 -->
+    <div class="form-step" data-step="3">
+      <div class="form-group"><label><i class="fas fa-user-edit"></i> Tentang Saya</label><textarea class="form-control" id="tentangSaya" rows="2">Saya pribadi sederhana, pekerja keras, bertanggung jawab. Terbiasa kuliah sambil bekerja. Berkomitmen membangun keluarga sakinah, mawaddah, warahmah.</textarea></div>
+      <div class="form-group"><label><i class="fas fa-pray"></i> Ibadah Harian</label><textarea class="form-control" id="ibadah" rows="2">Menjaga salat 5 waktu, membaca Al-Qur'an, riyadhah tajwid, dan mengamalkan dzikir serta thariqah Syadziliyah.</textarea></div>
+      <div class="form-group"><label><i class="fas fa-flag"></i> Visi Misi Pernikahan</label><textarea class="form-control" id="visiNikah" rows="2">Membangun keluarga yang sakinah, mawaddah, warahmah, saling menghormati, menguatkan, dan menyelesaikan masalah dengan komunikasi baik.</textarea></div>
+    </div>
+
+    <!-- step 4 -->
+    <div class="form-step" data-step="4">
+      <div class="form-group"><label><i class="fas fa-users"></i> Kriteria Pasangan Idaman</label><textarea class="form-control" id="kriteria" rows="2">Muslimah yang menjaga salat 5 waktu, berakhlak baik, jujur, setia, siap membangun rumah tangga, mau saling belajar dan mendukung, mengutamakan keluarga, tidak mudah terpengaruh lingkungan.</textarea></div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="komitmenJujur" checked />
+        <label for="komitmenJujur"><strong>Saya berkomitmen jujur</strong> dan bertanggung jawab atas seluruh data yang saya isi.</label>
+      </div>
+      <div class="form-note"><i class="fas fa-lock" style="color:#065F46;"></i> Data hanya digunakan untuk proses ta'aruf.</div>
+    </div>
+
+    <!-- navigation -->
+    <div class="nav-buttons">
+      <button class="btn-outline" id="prevBtn" disabled><i class="fas fa-chevron-left"></i> Sebelumnya</button>
+      <button class="btn-next" id="nextBtn">Selanjutnya <i class="fas fa-chevron-right"></i></button>
+      <button class="btn-primary" id="submitBtn" style="display:none; width:100%; justify-content:center; margin-top:8px;"><i class="fas fa-paper-plane"></i> Kirim Biodata</button>
+    </div>
+  </div>
+
+  <!-- status screen -->
+  <div id="statusScreen" class="hidden status-screen">
+    <div id="statusContent"></div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const landing = document.getElementById('landingPage');
+    const formContainer = document.getElementById('formContainer');
+    const statusScreen = document.getElementById('statusScreen');
+    const statusContent = document.getElementById('statusContent');
+
+    const startBtn = document.getElementById('startBiodataBtn');
+    const steps = document.querySelectorAll('.form-step');
+    const dots = document.querySelectorAll('.step-dot');
+    const stepCounter = document.getElementById('stepCounter');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const getVal = id => document.getElementById(id).value.trim();
+    const getSel = id => document.getElementById(id).value;
+
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function updateUI() {
+      steps.forEach((el, idx) => el.classList.toggle('active', idx === currentStep-1));
+      dots.forEach((dot, idx) => dot.classList.toggle('active', idx < currentStep));
+      stepCounter.textContent = `${currentStep} / ${totalSteps}`;
+      prevBtn.disabled = currentStep === 1;
+      nextBtn.style.display = currentStep < totalSteps ? 'inline-flex' : 'none';
+      submitBtn.style.display = currentStep === totalSteps ? 'inline-flex' : 'none';
+      document.getElementById('appCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function validateStep(step) {
+      if (step === 1) {
+        const nama = getVal('namaLengkap');
+        const usia = getVal('usia');
+        const dom = getVal('domisili');
+        const wa = getVal('waWali');
+        const email = getVal('email');
+        if (!nama || !usia || !dom || !wa || !email) return false;
+        if (isNaN(usia) || parseInt(usia) < 17) return false;
+        if (!wa.match(/^[0-9]{8,15}$/)) return false;
+        if (!email.includes('@')) return false;
+        return true;
+      }
+      if (step === 2) {
+        const kerja = getVal('pekerjaan');
+        if (!kerja) return false;
+        return true;
+      }
+      if (step === 3) return true;
+      if (step === 4) {
+        return document.getElementById('komitmenJujur').checked;
+      }
+      return true;
+    }
+
+    function goToStep(step) {
+      if (step < 1 || step > totalSteps) return;
+      currentStep = step;
+      updateUI();
+    }
+
+    function nextStep() {
+      if (currentStep < totalSteps) {
+        if (!validateStep(currentStep)) {
+          alert('Mohon lengkapi data dengan benar (WA wajib 8-15 digit, email, dll).');
+          return;
+        }
+        goToStep(currentStep + 1);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) goToStep(currentStep - 1);
+    }
+
+    startBtn.addEventListener('click', function() {
+      landing.classList.add('hidden');
+      formContainer.classList.remove('hidden');
+      statusScreen.classList.add('hidden');
+      goToStep(1);
+    });
+
+    nextBtn.addEventListener('click', nextStep);
+    prevBtn.addEventListener('click', prevStep);
+
+    submitBtn.addEventListener('click', function() {
+      if (!validateStep(4)) {
+        alert('Harap centang komitmen jujur.');
+        return;
+      }
+      const payload = {
+        nama_lengkap: getVal('namaLengkap'),
+        usia: parseInt(getVal('usia')) || 0,
+        jenis_kelamin: getSel('jenisKelamin'),
+        domisili: getVal('domisili'),
+        wa_wali: getVal('waWali'),
+        email: getVal('email'),
+        pendidikan: getSel('pendidikan'),
+        pekerjaan: getVal('pekerjaan'),
+        tentang_saya: getVal('tentangSaya'),
+        ibadah: getVal('ibadah'),
+        visi_nikah: getVal('visiNikah'),
+        kriteria: getVal('kriteria')
       };
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/id_ID/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-  
-  
-</body></html>
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="loader"></span> Mengirim...';
+
+      // GANTI URL INI DENGAN LINK WEB APP ANDA
+      const url = https://script.google.com/macros/s/AKfycbzxxf-HMaYnsunt5uy1GSrRt0yCm4AYJMGbAZSJZcbN1dg5Ee9gXFFVo00do3gh4_2h/exec; 
+      // <-- ganti dengan link asli
+
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Gagal mengirim data');
+        return response.json();
+      })
+      .then(data => {
+        formContainer.classList.add('hidden');
+        statusScreen.classList.remove('hidden');
+        statusContent.innerHTML = `
+          <i class="fas fa-check-circle" style="color:#065F46;"></i>
+          <h2>Barakallahu Fiik</h2>
+          <p style="font-size:18px; font-weight:500;">Biodata Berhasil Terkirim</p>
+          <p style="color:#3d5a4b;">akan kami hubungi via Wali</p>
+          <div class="privacy-note"><i class="fas fa-shield-alt"></i> Data aman hanya admin yang melihat</div>
+        `;
+      })
+      .catch(err => {
+        formContainer.classList.add('hidden');
+        statusScreen.classList.remove('hidden');
+        statusContent.innerHTML = `
+          <i class="fas fa-exclamation-triangle" style="color:#b45309;"></i>
+          <h2 style="color:#b45309;">Gagal Mengirim</h2>
+          <p>Terjadi kesalahan: ${err.message || 'Coba lagi nanti'}</p>
+          <button class="btn-primary" style="margin-top:20px;" onclick="location.reload()"><i class="fas fa-redo"></i> Ulangi</button>
+        `;
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Biodata';
+      });
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !formContainer.classList.contains('hidden') && !statusScreen.classList.contains('hidden') === false) {
+        if (currentStep === totalSteps) submitBtn.click();
+        else nextBtn.click();
+      }
+    });
+
+    updateUI();
+  })();
+</script>
+</body>
+</html>
